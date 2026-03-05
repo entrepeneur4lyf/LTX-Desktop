@@ -22,6 +22,7 @@ import {
 } from '../lib/api-video-options'
 import { logger } from '../lib/logger'
 import { RetakePanel } from '../components/RetakePanel'
+import { FreeApiKeyBubble } from '../components/FreeApiKeyBubble'
 
 // Asset card with hover overlays
 function AssetCard({ 
@@ -780,7 +781,7 @@ const DEFAULT_VIDEO_SETTINGS = {
 
 export function GenSpace() {
   const { currentProject, currentProjectId, addAsset, addTakeToAsset, deleteAsset, toggleFavorite, genSpaceEditImageUrl, setGenSpaceEditImageUrl, setGenSpaceEditMode, genSpaceAudioUrl, setGenSpaceAudioUrl, genSpaceRetakeSource, setGenSpaceRetakeSource, setPendingRetakeUpdate } = useProjects()
-  const { shouldVideoGenerateWithLtxApi } = useAppSettings()
+  const { shouldVideoGenerateWithLtxApi, forceApiGenerations, settings: appSettings } = useAppSettings()
   const [mode, setMode] = useState<'image' | 'video' | 'retake'>('video')
   const [prompt, setPrompt] = useState('')
   const [inputImage, setInputImage] = useState<string | null>(null)
@@ -1364,6 +1365,12 @@ export function GenSpace() {
 
       {/* Floating prompt panel — wider, responsive, centered */}
       <div className="absolute bottom-5 left-1/2 w-[min(700px,calc(100%-2rem))] -translate-x-1/2">
+
+        <FreeApiKeyBubble
+          forceApiGenerations={forceApiGenerations}
+          hasLtxApiKey={appSettings.hasLtxApiKey}
+          isGenerating={isGenerating}
+        />
 
         {/* Prompt bar */}
         <PromptBar
