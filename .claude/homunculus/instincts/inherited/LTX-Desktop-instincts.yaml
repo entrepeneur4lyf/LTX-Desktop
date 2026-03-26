@@ -1,0 +1,615 @@
+# Instincts generated from https://github.com/entrepeneur4lyf/LTX-Desktop
+# Generated: 2026-03-26T13:11:05.039Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: LTX-Desktop-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Commit Length
+
+## Action
+
+Keep commit messages concise (~47 characters)
+
+## Evidence
+
+- Average commit message length: 47 chars
+- Based on 53 commits
+
+---
+id: LTX-Desktop-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: LTX-Desktop-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: LTX-Desktop-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: LTX-Desktop-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: LTX-Desktop-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~9x per month
+- Files: frontend/components/*, frontend/contexts/*, frontend/views/*
+
+---
+id: LTX-Desktop-workflow-update-npm-dependencies
+trigger: "when doing update npm dependencies"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Update Npm Dependencies
+
+## Action
+
+Follow the update-npm-dependencies workflow:
+1. Edit package.json to update dependency versions.
+2. Regenerate pnpm-lock.yaml to reflect new versions.
+3. Update pnpm-workspace.yaml if workspace structure changes.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: package.json, pnpm-lock.yaml, pnpm-workspace.yaml
+
+---
+id: LTX-Desktop-workflow-add-or-update-linux-support
+trigger: "when doing add or update linux support"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Add Or Update Linux Support
+
+## Action
+
+Follow the add-or-update-linux-support workflow:
+1. Edit electron-builder.yml to add targets or update configuration.
+2. Add or update resources/icons/*.png for Linux icons.
+3. Update scripts/create-installer.sh and scripts/Dockerfile.linux-build for build process.
+4. Update documentation (README.md, docs/INSTALLER.md) to reflect Linux support.
+5. Modify electron/python-setup.ts if Python setup changes are needed.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: electron-builder.yml, resources/icons/1024x1024.png, resources/icons/128x128.png
+
+---
+id: LTX-Desktop-workflow-feature-or-breaking-backend-change
+trigger: "when doing feature or breaking backend change"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Feature Or Breaking Backend Change
+
+## Action
+
+Follow the feature-or-breaking-backend-change workflow:
+1. Edit or add backend/handlers/*.py for API logic.
+2. Edit or add backend/services/**/*.py for core logic.
+3. Edit backend/api_types.py and backend/state/app_state_types.py for type changes.
+4. Update backend/tests/*.py and backend/tests/fakes/services.py for test coverage.
+5. Update frontend/components or hooks if frontend integration is needed.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: backend/handlers/*.py, backend/services/**/*.py, backend/api_types.py
+
+---
+id: LTX-Desktop-workflow-frontend-feature-or-ui-enhancement
+trigger: "when doing frontend feature or ui enhancement"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Frontend Feature Or Ui Enhancement
+
+## Action
+
+Follow the frontend-feature-or-ui-enhancement workflow:
+1. Edit or add frontend/components/*.tsx for UI elements.
+2. Edit frontend/views/*.tsx for view logic.
+3. Edit frontend/contexts/*.tsx or frontend/hooks/*.ts for state/logic.
+4. Edit frontend/types/*.ts for type changes.
+5. Update frontend/index.css if styling is needed.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: frontend/components/*.tsx, frontend/views/*.tsx, frontend/contexts/*.tsx
+
+---
+id: LTX-Desktop-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Edit README.md to update general documentation.
+2. Edit docs/INSTALLER.md or docs/CONTRIBUTING.md for install or contribution instructions.
+3. Edit docs/TELEMETRY.md for telemetry/privacy information.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: README.md, docs/INSTALLER.md, docs/CONTRIBUTING.md
+
+---
+id: LTX-Desktop-workflow-sync-upstream-with-origin
+trigger: "when doing sync upstream with origin"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/LTX-Desktop
+---
+
+# LTX Desktop Workflow Sync Upstream With Origin
+
+## Action
+
+Follow the sync-upstream-with-origin workflow:
+1. Merge changes from origin/main into upstream/main.
+2. Update backend/handlers, backend/state, backend/tests, and package.json as needed.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: backend/handlers/*.py, backend/state/*.py, backend/tests/*.py
+
+---
+id: ltx-desktop-instinct-file-naming
+trigger: "When creating or renaming a Python file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct File Naming
+
+## Action
+
+Use snake_case for file names
+
+## Evidence
+
+- Pattern in backend/services/a2v_pipeline/distilled_a2v_pipeline.py
+- Pattern in backend/state/app_settings.py
+
+---
+id: ltx-desktop-instinct-function-naming
+trigger: "When defining a Python function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in backend/services/a2v_pipeline/distilled_a2v_pipeline.py
+- Pattern in backend/handlers/retake_handler.py
+
+---
+id: ltx-desktop-instinct-class-naming
+trigger: "When defining a Python class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in backend/services/a2v_pipeline/distilled_a2v_pipeline.py
+
+---
+id: ltx-desktop-instinct-constant-naming
+trigger: "When defining a constant in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in backend/state/app_settings.py
+
+---
+id: ltx-desktop-instinct-import-style
+trigger: "When importing modules in Python"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in backend/services/a2v_pipeline/distilled_a2v_pipeline.py
+
+---
+id: ltx-desktop-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in frontend/components/*.tsx
+
+---
+id: ltx-desktop-instinct-test-file-pattern
+trigger: "When adding a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in backend/tests/test_runtime_policy_decision.py
+- Pattern in **/*.test.*
+
+---
+id: ltx-desktop-instinct-unit-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Unit Test Type
+
+## Action
+
+Write unit tests for new features or changes
+
+## Evidence
+
+- Pattern in backend/tests/*.py
+- Pattern in **/*.test.*
+
+---
+id: ltx-desktop-instinct-test-location-mixed
+trigger: "When placing test files"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Test Location Mixed
+
+## Action
+
+Place test files alongside source files or in dedicated test folders as appropriate
+
+## Evidence
+
+- Pattern in backend/tests/*.py
+- Pattern in backend/services/a2v_pipeline/
+
+---
+id: ltx-desktop-instinct-commit-format-freeform
+trigger: "When writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Commit Format Freeform
+
+## Action
+
+Use a short, freeform message, optionally prefixed with affected area (e.g., 'linux:', 'electron/updater:')
+
+## Evidence
+
+- Seen in commit 'linux: update icons'
+- Seen in commit 'electron/updater: do not force quit when update is ready'
+
+---
+id: ltx-desktop-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Commit Length
+
+## Action
+
+Keep commit messages concise (average ~47 characters)
+
+## Evidence
+
+- Pattern in commit examples
+- Average length: 47
+
+---
+id: ltx-desktop-instinct-update-npm-dependencies
+trigger: "When someone wants to update npm packages or keep dependencies up to date"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Update Npm Dependencies
+
+## Action
+
+Edit package.json, regenerate pnpm-lock.yaml, and update pnpm-workspace.yaml if needed
+
+## Evidence
+
+- Workflow: update-npm-dependencies
+- Commits: 'upgrade npm dependencies'
+
+---
+id: ltx-desktop-instinct-add-or-update-linux-support
+trigger: "When someone wants to add or enhance Linux compatibility"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Add Or Update Linux Support
+
+## Action
+
+Edit electron-builder.yml, update resources/icons/*.png, update installer scripts, and update documentation
+
+## Evidence
+
+- Workflow: add-or-update-linux-support
+- Commits: 'linux: update icons'
+
+---
+id: ltx-desktop-instinct-feature-or-breaking-backend-change
+trigger: "When someone wants to add a new backend feature, refactor, or remove pipelines"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Feature Or Breaking Backend Change
+
+## Action
+
+Edit or add backend/handlers, services, types, and tests; update frontend if needed
+
+## Evidence
+
+- Workflow: feature-or-breaking-backend-change
+- Commits: 'Add user preference toggle for LTX API video generation'
+
+---
+id: ltx-desktop-instinct-frontend-feature-or-ui-enhancement
+trigger: "When someone wants to add a new UI feature, button, or modal"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Frontend Feature Or Ui Enhancement
+
+## Action
+
+Edit or add frontend/components, views, contexts/hooks, types, and styles
+
+## Evidence
+
+- Workflow: frontend-feature-or-ui-enhancement
+- Commits: 'Add user preference toggle for LTX API video generation'
+
+---
+id: ltx-desktop-instinct-documentation-update
+trigger: "When someone wants to clarify, correct, or expand documentation"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Documentation Update
+
+## Action
+
+Edit README.md, docs/INSTALLER.md, docs/CONTRIBUTING.md, or docs/TELEMETRY.md
+
+## Evidence
+
+- Workflow: documentation-update
+- Commits: 'Update documentation (README.md, docs/INSTALLER.md) to reflect Linux support.'
+
+---
+id: ltx-desktop-instinct-sync-upstream-with-origin
+trigger: "When someone wants to merge or sync branches to keep them up to date"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/LTX-Desktop
+---
+
+# Ltx Desktop Instinct Sync Upstream With Origin
+
+## Action
+
+Merge changes from origin/main into upstream/main and update backend/handlers, state, tests, and package.json as needed
+
+## Evidence
+
+- Workflow: sync-upstream-with-origin
+- Commit: 'sync upstream/main with origin/main'
+
